@@ -28,15 +28,17 @@ input {
     padding: 20px 0 0 110px;
     width: 68px;
     height: 31px;
-    display: inline-block;
 }
 .navigation__menu{
-    display: inline-block;
+    display: flex;
     height: 20px;
-    width: 489px;
+    width: 559px;
     padding: 25px 108px 25px 620px;
+    align-items: center;
+    justify-content: space-between;
 }
 .navigation__menu-block{
+    width: 489px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,6 +54,85 @@ input {
     color: rgba(255, 255, 255, 0.7); 
     text-decoration: none;
 }
+.navigation__menu-item:hover {
+    border-bottom: 2px solid #EC7979;
+}
+.material-toggle {
+    width: 60px;
+    height: 30px;
+}
+
+.material-toggle input {
+    display: none;
+}
+
+.material-toggle .toggle-label {
+    position: relative;
+    width: 150px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.material-toggle .toggle-label .track,
+.material-toggle .toggle-label .ball {
+    position: absolute;
+    display: block;
+    transition: all 250ms cubic-bezier(.4,0,.2,1);
+}
+
+.material-toggle .toggle-label .track {
+    /*тут стили серой области где ездит шарик*/
+    border: 0.5px solid #4F4F4F;
+    border-radius: 50px;
+    width: 60px;
+    height: 30px;
+    
+    background: #EC7979;
+    display: flex;
+    align-items: center;
+}
+
+.material-toggle .toggle-label .ball {
+    width: 20px;
+    height: 20px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background: #EC7979;;
+    margin-left: 8px;
+
+    /*стили шарика*/
+}
+
+.material-toggle .toggle-label .ball .icon {
+    width: 12px;
+    height: 12px;
+    border: 4px solid #E9E9E9;
+    border-radius: 50px;
+    background: none;
+    /*стили луны*/
+}
+
+.material-toggle input:checked ~ .toggle-label .track {
+    background: #fff;
+}
+
+.material-toggle input:checked ~ .toggle-label .ball {
+    transform: translate(30px,0);
+    margin: 0px;
+    transition: 250ms;
+}
+
+.material-toggle input:checked ~ .toggle-label .ball .icon{
+    background: url(img/moon.svg);
+    
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: none;
+}
+
 .header {
     margin-top: 70px;
         width: 100%;
