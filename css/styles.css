@@ -19,6 +19,9 @@ input {
     align-items: center;
     justify-content: center;
 }
+.navigation__menu-icon{
+    display: none;
+}
 .navigation__bg{
     width: 1400px; 
     display: flex;
